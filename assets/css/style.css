@@ -1443,3 +1443,11 @@ section .container {
     padding: 0 !important;
   }
 }
+
+/* Flechas del slider Swiper en color #18d26e */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #18d26e !important;
+  fill: #18d26e !important;
+  stroke: #18d26e !important;
+}

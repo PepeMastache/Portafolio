@@ -1,10 +1,4 @@
-/**
-* Template Name: Personal
-* Updated: Mar 10 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 (function() {
   "use strict";
 
@@ -237,22 +231,56 @@ const scrollto = (el) => {
    * Portfolio details slider
    */
   new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
+  speed: 400,
+  loop: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev'
+  }
+});
 
   /**
    * Initiate Pure Counter 
    */
   new PureCounter();
+  
+  /**
+   * Animation on scroll
+   */
+  const portfolioSlider = document.querySelector('.portfolio-details-slider .swiper');
+if (portfolioSlider && portfolioSlider.swiper) {
+  const swiperInstance = portfolioSlider.swiper;
+  // Pausar autoplay al hacer clic o mantener presionado en imágenes (excepto enlaces)
+  portfolioSlider.addEventListener('mousedown', function(e) {
+    if (e.target.tagName === 'IMG' && !e.target.closest('a')) {
+      swiperInstance.autoplay.stop();
+    }
+  });
+  portfolioSlider.addEventListener('touchstart', function(e) {
+    if (e.target.tagName === 'IMG' && !e.target.closest('a')) {
+      swiperInstance.autoplay.stop();
+    }
+  });
+  // Opcional: reanudar autoplay al salir
+  portfolioSlider.addEventListener('mouseup', function(e) {
+    if (e.target.tagName === 'IMG' && !e.target.closest('a')) {
+      swiperInstance.autoplay.start();
+    }
+  });
+  portfolioSlider.addEventListener('touchend', function(e) {
+    if (e.target.tagName === 'IMG' && !e.target.closest('a')) {
+      swiperInstance.autoplay.start();
+    }
+  });
+}
 
 })()
