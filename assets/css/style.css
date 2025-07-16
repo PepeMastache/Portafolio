@@ -1,53 +1,7 @@
-/**
-* Template Name: Personal
-* Updated: Mar 10 2023 with Bootstrap v5.2.3
-* Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-/*body {
-  font-family: "Open Sans", sans-serif;
-  background-color: #31383B;
-  color: #fff;
-  position: absolute;
-  background: #38383859;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  ;
-}
-
-
-
-body::before {
-  content: "img\portfolio\video-fondo.mp4";
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: 100vh;
-  z-index: -1;
-  background-color: #31383B; /* Color de fondo de respaldo 
-}
-
-#video-fondo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ajuste del video al tamaño del contenedor 
-}*/
 
 body {
   margin: 0;
@@ -1458,5 +1412,34 @@ section .container {
   50% {
     background: #4ceb95;
     box-shadow: 0 0 10px 2px #4ceb95;
+  }
+}
+
+/* Homologar grosor de barras de habilidades en móvil */
+@media (max-width: 991px) {
+  .skills .progress {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .skills .progress-bar-wrap {
+    height: 6px !important;
+    min-height: 6px !important;
+    max-height: 6px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .skills .progress-bar {
+    height: 6px !important;
+    min-height: 6px !important;
+    max-height: 6px !important;
+    border-radius: 3px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
   }
 }
