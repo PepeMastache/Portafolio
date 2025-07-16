@@ -384,6 +384,32 @@ h6 {
   position: relative;
 }
 
+/* Mostrar menú desplegado solo en #header en móvil */
+@media (max-width: 991px) {
+  #header:not(.header-top) .navbar ul {
+    display: flex !important;
+    flex-direction: column;
+    position: static;
+    background: transparent;
+    width: 100%;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+  }
+  #header:not(.header-top) .navbar li {
+    margin: 10px 0;
+  }
+  #header:not(.header-top) .navbar .mobile-nav-toggle {
+    display: none !important;
+  }
+  #header.header-top .navbar ul {
+    display: none !important;
+  }
+  #header.header-top .navbar .mobile-nav-toggle {
+    display: block !important;
+  }
+}
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
